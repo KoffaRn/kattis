@@ -1,2 +1,2 @@
 # kattis
-Solutions to some https://open.kattis.com problems
+Solutions to some https://open.kattis.com problems.
