@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.System.in;
@@ -10,24 +11,24 @@ public class bokhyllor {
         int largeBooks = sc.nextInt();
         int shelfWidth = sc.nextInt();
 
-        int nbShelf = 0;
+        long nbShelf = 0;
+        int currShelfWidth;
         while(smallBooks > 0 || mediumBooks > 0 || largeBooks > 0) {
-            int currShelfWidth = shelfWidth;
-            while(currShelfWidth >= 3 && largeBooks > 0) {
+            nbShelf++;
+            currShelfWidth = shelfWidth;
+            while(currShelfWidth > 2 && largeBooks > 0) {
                 currShelfWidth -= 3;
                 largeBooks--;
             }
-            while(currShelfWidth >= 2 && mediumBooks > 0) {
+            while(currShelfWidth > 1 && mediumBooks > 0) {
                 currShelfWidth -= 2;
                 mediumBooks--;
             }
-            while(currShelfWidth >= 1 && smallBooks > 0) {
+            while(currShelfWidth > 0 && smallBooks > 0) {
                 currShelfWidth -= 1;
                 smallBooks--;
             }
-            nbShelf++;
         }
-        if(nbShelf < 2) System.out.println(2);
-        else System.out.println(nbShelf);
+        System.out.println(nbShelf);
     }
 }
